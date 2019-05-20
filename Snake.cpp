@@ -11,7 +11,7 @@ Snake::Snake(int col, int row, int sqsize, std::vector<sf::RectangleShape>& skRS
     snakeRS[1].setPosition(30, 30);
     snakeRS[2].setPosition(30, 60);
     snakeRS[3].setPosition(30, 90);
-
+    start=false;
     fruit.setSize(sf::Vector2f(30, 30));
     fruit.setFillColor(sf::Color::Green);
     fruit.setPosition((rand()%columns)*30, (rand()%rows)*30);
@@ -53,12 +53,10 @@ void Snake::checkPos()
     if (snakeRS[0].getPosition().x<0 || snakeRS[0].getPosition().y<0 || snakeRS[0].getPosition().x>750 ||
             snakeRS[0].getPosition().y>600) {
         finished = true;
-        window.close();
     }
     for (int i = 1; i<snakeRS.size(); ++i) {
         if (snakeRS[0].getPosition()==snakeRS[i].getPosition()) {
             finished = true;
-            window.close();
         }
     }
 }

@@ -22,7 +22,7 @@ void ScoreController::handleEvent(sf::Event &event)
             x = event.mouseButton.x;
             y = event.mouseButton.y;
 
-            if(x>=550 && x <=900 && y >= 500 && y<=650)
+            if(x>=300 && x <=650 && y >= 450 && y<=600)
             {
                 window.close();
             }

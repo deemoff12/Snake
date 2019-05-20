@@ -14,6 +14,7 @@ class Snake {
     int squaresize;
     int counter = 0;
     bool finished = false;
+    bool start;
     sf::RenderWindow& window;
     std::vector<sf::RectangleShape>& snakeRS; // Wektor odpowiadająca za segmenty węża
     sf::RectangleShape temp1, temp2; // zmienne służące do przemieszczania się węża
@@ -26,6 +27,8 @@ public:
     int getRows() { return rows; }
     int getSquareSize() { return squaresize; }
     bool isFisnished() { return finished; }
+    void startFn(){start=true;}
+    bool isStarted() {return start;}
     int getCounter() { return counter; }
     void move();
     void eat();

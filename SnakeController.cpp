@@ -11,6 +11,10 @@ SnakeController::SnakeController(sf::RenderWindow& win, int& x, int& y, Snake& s
 void SnakeController::handleEvent(sf::Event& event)
 {
     if (event.type==sf::Event::KeyPressed) {
+        if(event.key.code==sf::Keyboard::Space)
+        {
+            snake.startFn();
+        }
         if (event.key.code==sf::Keyboard::Left) {
             if(xDir==0)
             {
@@ -39,6 +43,5 @@ void SnakeController::handleEvent(sf::Event& event)
                 yDir = -1;
             }
         }
-
     }
 }

@@ -33,6 +33,14 @@ IntroView::IntroView(sf::RenderWindow& window): window(window)
     grupa.setPosition(320,140);
     grupa.setFillColor(sf::Color::Red);
     grupa.setString("Grupa: Wtorek 15");
+
+    play_button.setPosition(300,500);
+    play_button.setFillColor(sf::Color::Green);
+    play_button.setSize(sf::Vector2f(150,80));
+    play_txt.setPosition(330,510);
+    play_txt.setFillColor(sf::Color::Black);
+    play_txt.setString("PLAY");
+    play_txt.setCharacterSize(40);
 }
 void IntroView::draw(sf::RenderWindow &win) {
     win.draw(snaketxt);

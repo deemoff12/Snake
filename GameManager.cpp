@@ -8,24 +8,25 @@ GameManager::GameManager(IntroController &ic, SnakeController &mc, ScoreControll
         : introController(ic), snakeController(mc), scoreController(sc)
 {
 
-    state = INTRO;
+//    state = INTRO;
+    state=1;
 }
 
 void GameManager::updateState() {
     switch (state) {
-    case INTRO:
+    case 1 ://INTRO:
         if (introController.isFinished())
-            state = GAME;
+            state = 2;//GAME;
         break;
-    case GAME:
+    case 2://GAME:
         if (snakeController.isFinished())
-            state = SCORE;
+            state = 3;//SCORE;
         break;
-    case SCORE:
+    case 3://SCORE:
         if(scoreController.isFinished())
         {
             scoreController.changeState();
-            state = INTRO;
+            state = 1;//INTRO;
         }
         break;
     }
@@ -34,13 +35,13 @@ void GameManager::updateState() {
 void GameManager::handleEvent(sf::Event &event)
 {
     switch (state) {
-    case INTRO:
+    case 1://INTRO:
         introController.handleEvent(event);
         break;
-    case GAME:
+    case 2://GAME:
         snakeController.handleEvent(event);
         break;
-    case SCORE:
+    case 3://SCORE:
         scoreController.handleEvent(event);
         break;
     }
@@ -50,14 +51,14 @@ void GameManager::handleEvent(sf::Event &event)
 void GameManager::draw(sf::RenderWindow &win) {
     // updateState() ??
     switch (state) {
-    case INTRO:
+    case 1://INTRO:
         introController.draw(win);
 
         break;
-    case GAME:
+    case 2://GAME:
         snakeController.draw(win);
         break;
-    case SCORE:
+    case 3://SCORE:
         scoreController.changeState();
         scoreController.draw(win);
         break;

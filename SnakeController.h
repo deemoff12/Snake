@@ -14,7 +14,7 @@ class SnakeController {
     sf::RenderWindow& window;
     int& xDir;
     int& yDir;
-    Snake snake;
+    Snake &snake;
     SnakeView& view;
 public:
     explicit SnakeController(sf::RenderWindow& win, int& x, int& y, Snake& snake, SnakeView& iv);
