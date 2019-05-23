@@ -15,14 +15,14 @@ class Snake {
     int counter = 0;
     bool finished = false;
     bool start;
-    sf::RenderWindow& window;
-    std::vector<sf::RectangleShape>& snakeRS; // Wektor odpowiadająca za segmenty węża
-    sf::RectangleShape temp1, temp2; // zmienne służące do przemieszczania się węża
+    std::vector<sf::RectangleShape> snakeRS; // Wektor odpowiadająca za segmenty węża
+    int length;
+    int xDir=1,yDir=0;
 
     sf::RectangleShape fruit;// Kwadrat odpowiadający za owoc
 
 public:
-    Snake(int col, int row, int squaresize, std::vector<sf::RectangleShape>& skRS, sf::RenderWindow& win);
+    Snake(int col, int row, int squaresize);
     int getColumns() { return columns; }
     int getRows() { return rows; }
     int getSquareSize() { return squaresize; }
@@ -30,6 +30,12 @@ public:
     void startFn(){start=true;}
     bool isStarted() {return start;}
     int getCounter() { return counter; }
+    void setSnakeParameters(sf::Color fillColor, int size, sf::Color outlineColor, int thickness, int index);
+    sf::RectangleShape getSnakeSegment(int i){ return snakeRS[i];}
+    void setDir(int x, int y){xDir=x; yDir=y;}
+    int getDirX(){ return xDir;}
+    int getDirY(){return yDir;}
+    int getLength(){return length;}
     void move();
     void eat();
     void checkPos();

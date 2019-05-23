@@ -12,11 +12,10 @@
 class SnakeView {
     Snake & snake;
     sf::RenderWindow & window;
-    std::vector<sf::RectangleShape> &snakeRec;
 
 
 public:
-    SnakeView(Snake &sk, sf::RenderWindow &win, std::vector<sf::RectangleShape>& skRS);
+    SnakeView(Snake &sk, sf::RenderWindow &win);
     void draw(sf::RenderWindow &win);
 };
 

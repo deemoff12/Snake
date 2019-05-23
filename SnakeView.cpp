@@ -5,7 +5,7 @@
 #include "SnakeView.h"
 
 
-SnakeView::SnakeView(Snake &sk, sf::RenderWindow &win, std::vector<sf::RectangleShape> &skRS) :snake(sk), window(win), snakeRec(skRS) {
+SnakeView::SnakeView(Snake &sk, sf::RenderWindow &win) :snake(sk), window(win) {
 
 
 }
@@ -25,13 +25,12 @@ void SnakeView::draw(sf::RenderWindow &win) {
         }
     }
 
-    for (int i = 0; i < snakeRec.size() ; ++i) {
-        snakeRec[i].setFillColor(sf::Color::Red);
-        snakeRec[i].setSize(sf::Vector2f(snake.getSquareSize(),snake.getSquareSize()));
+    for (int i = 0; i < snake.getLength() ; ++i) {
+        snake.setSnakeParameters(sf::Color::Red,snake.getSquareSize(),sf::Color::Black,1,i);
 
         snake.move();
 
-        win.draw(snakeRec[i]);
+        win.draw(snake.getSnakeSegment(i));
         win.draw(snake.renderFruit());
 
     }

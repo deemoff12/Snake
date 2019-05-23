@@ -3,10 +3,10 @@
 //
 
 #include "SnakeController.h"
-SnakeController::SnakeController(sf::RenderWindow& win, int& x, int& y, Snake& snake, SnakeView & iv)
-        :window(win), xDir(x), yDir(y), snake(snake), view(iv)
+SnakeController::SnakeController(sf::RenderWindow& win, Snake& snake, SnakeView & iv)
+        :window(win), snake(snake), view(iv)
 {
-    xDir=1;yDir=0;
+
 }
 void SnakeController::handleEvent(sf::Event& event)
 {
@@ -16,31 +16,27 @@ void SnakeController::handleEvent(sf::Event& event)
             snake.startFn();
         }
         if (event.key.code==sf::Keyboard::Left) {
-            if(xDir==0)
+            if(snake.getDirX()==0)
             {
-                xDir = -1;
-                yDir = 0;
+                snake.setDir(-1,0);
             }
         }
         if (event.key.code==sf::Keyboard::Right) {
-            if(xDir==0)
+            if(snake.getDirX()==0)
             {
-                xDir = 1;
-                yDir = 0;
+                snake.setDir(1,0);
             }
         }
         if (event.key.code==sf::Keyboard::Down) {
-            if(yDir==0)
+            if(snake.getDirY()==0)
             {
-                xDir = 0;
-                yDir = 1;
+                snake.setDir(0,1);
             }
         }
         if (event.key.code==sf::Keyboard::Up) {
-            if(yDir==0)
+            if(snake.getDirY()==0)
             {
-                xDir = 0;
-                yDir = -1;
+                snake.setDir(0,-1);
             }
         }
     }

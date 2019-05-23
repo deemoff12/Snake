@@ -12,12 +12,10 @@
 
 class SnakeController {
     sf::RenderWindow& window;
-    int& xDir;
-    int& yDir;
     Snake &snake;
     SnakeView& view;
 public:
-    explicit SnakeController(sf::RenderWindow& win, int& x, int& y, Snake& snake, SnakeView& iv);
+    explicit SnakeController(sf::RenderWindow& win, Snake& snake, SnakeView& iv);
     void handleEvent(sf::Event& event);
     bool isFinished() { return snake.isFisnished(); }
     void draw (sf::RenderWindow & win) { view.draw(win); }
