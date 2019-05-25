@@ -38,27 +38,9 @@ int main()
         }
         if(gm.getGameState()==2)
         {
-            //PROBLEM Z OBSŁUGA WYŚWIETLANIA JEŚLI PĘTLA OBSŁUGUJĄCA POZYCJĘ WĘŻA JEST W POLU KLASY SNAKE
-            if (megawonsz9.isStarted()) {
-//                for (int j = 0; j<snakeRS.size(); ++j) {
-//
-//                    if (j==0) {
-//                        temp1.setPosition(snakeRS[j].getPosition());
-//                        snakeRS[0].move(x*30, y*30);
-//                        temp2.setPosition(snakeRS[j+1].getPosition());
-//                        snakeRS[j+1].setPosition(temp1.getPosition());
-//                        continue;
-//                    }
-//                    j++;
-//                    temp1.setPosition(snakeRS[j].getPosition());
-//                    snakeRS[j].setPosition(temp2.getPosition());
-//                    temp2.setPosition(snakeRS[j+1].getPosition());
-//                    snakeRS[j+1].setPosition(temp1.getPosition());
-//                    megawonsz9.checkPos();
-//                    megawonsz9.eat();
+            if (megawonsz9.isStarted())
                 megawonsz9.move();
-//                }
-            }
+
         }
 
         window.clear(sf::Color::Black);

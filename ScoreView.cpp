@@ -9,7 +9,7 @@ ScoreView::ScoreView(Snake snake): snake(snake)
         abort();
     }
     endGameTxt.setFont(font);
-    score.setFont(font);
+
 
     endGame.setSize(sf::Vector2f(350,150));
     endGame.setPosition(250, 400);
@@ -23,15 +23,11 @@ ScoreView::ScoreView(Snake snake): snake(snake)
     endGameTxt.setString("KONIEC GRY");
     endGameTxt.setCharacterSize(40);
 
-    score.setCharacterSize(50);
-    score.setPosition(200,100);
-    score.setFillColor(sf::Color::Green);
+
 }
 
 void ScoreView::draw(sf::RenderWindow &win) {
     win.draw(endGame);
     win.draw(endGameTxt);
-    strumien<<snake.getCounter();
-    score.setString(strumien.str());
-    win.draw(score);
+
 }

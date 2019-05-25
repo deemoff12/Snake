@@ -7,6 +7,13 @@
 
 SnakeView::SnakeView(Snake &sk, sf::RenderWindow &win) :snake(sk), window(win) {
 
+    if (!font.loadFromFile("D://Studia//Programowanie Obiektowe//gitlab//minesweeper//arial.ttf")) {
+        abort();
+    }
+    score.setFont(font);
+    score.setCharacterSize(30);
+    score.setPosition(15,15);
+    score.setFillColor(sf::Color::Blue);
 
 }
 
@@ -28,11 +35,16 @@ void SnakeView::draw(sf::RenderWindow &win) {
     for (int i = 0; i < snake.getLength() ; ++i) {
         snake.setSnakeParameters(sf::Color::Red,snake.getSquareSize(),sf::Color::Black,1,i);
 
-        snake.move();
+        for (int j = 0; j < snake.getLength(); ++j) {
+            win.draw(snake.getSnakeSegment(j));
+        }
 
-        win.draw(snake.getSnakeSegment(i));
         win.draw(snake.renderFruit());
+
 
     }
 
+//    strumien<<snake.getCounter();
+//    score.setString(strumien.str());
+//    win.draw(score);
 }

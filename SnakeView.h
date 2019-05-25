@@ -8,10 +8,14 @@
 #include <SFML/Graphics.hpp>
 #include "Snake.h"
 #include <windows.h>
+#include <sstream>
 
 class SnakeView {
     Snake & snake;
     sf::RenderWindow & window;
+    sf::Text score;
+    sf::Font font;
+    std::ostringstream strumien;
 
 
 public:

@@ -27,29 +27,24 @@ void Snake::move()
 {
     sf::RectangleShape temp1, temp2; // zmienne służące do przemieszczania się węża
     //PROBLEM Z WYŚWIETLANIEM(OBRAZ SIĘ ROZJEZDZA TWORZAC "GRADIENT" DLATEGO FUNKCJA ZNAJDUJE SIE W MAIN
-//    for (int j = 0; j<snakeRS.size(); ++j) {
+    for (int j = 0; j<snakeRS.size(); ++j) {
 
-//        if (j==0) {
-//            temp1.setPosition(snakeRS[j].getPosition());
-//            snakeRS[0].move(xDir*30, yDir*30);
-//            temp2.setPosition(snakeRS[j+1].getPosition());
-//            snakeRS[j+1].setPosition(temp1.getPosition());
-//            continue;
-//        }
-//        j++;
-//        temp1.setPosition(snakeRS[j].getPosition());
-//        snakeRS[j].setPosition(temp2.getPosition());
-//        if (j!=snakeRS.size()-1) {
-//
-//            temp2.setPosition(snakeRS[j+1].getPosition());
-//            snakeRS[j+1].setPosition(temp1.getPosition());
-//        }
-        temp1.setPosition(snakeRS[0].getPosition());
-        snakeRS[0].move(xDir*30,yDir*30);
-        temp2.setPosition(snakeRS[1].getPosition());
-        snakeRS[1].setPosition(temp1.getPosition());
+        if (j==0) {
+            temp1.setPosition(snakeRS[j].getPosition());
+            snakeRS[0].move(xDir*30, yDir*30);
+            temp2.setPosition(snakeRS[j+1].getPosition());
+            snakeRS[j+1].setPosition(temp1.getPosition());
+            continue;
+        }
+        j++;
+        temp1.setPosition(snakeRS[j].getPosition());
+        snakeRS[j].setPosition(temp2.getPosition());
+        if (j!=snakeRS.size()-1) {
 
-//    }
+            temp2.setPosition(snakeRS[j+1].getPosition());
+            snakeRS[j+1].setPosition(temp1.getPosition());
+        }
+    }
     checkPos();
     eat();
 }
