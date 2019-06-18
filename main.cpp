@@ -8,6 +8,7 @@
 #include "ScoreController.h"
 #include "GameManager.h"
 #include <windows.h>
+#include <iostream>
 
 int main()
 {

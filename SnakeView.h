@@ -15,7 +15,6 @@ class SnakeView {
     sf::RenderWindow & window;
     sf::Text score;
     sf::Font font;
-    std::ostringstream strumien;
 
 
 public:

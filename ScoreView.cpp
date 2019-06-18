@@ -16,6 +16,7 @@ ScoreView::ScoreView(Snake snake): snake(snake)
     endGame.setFillColor(sf::Color::Red);
     endGame.setOutlineThickness(2);
     endGame.setOutlineColor(sf::Color::Green);
+
     endGameTxt.setFillColor(sf::Color::Blue);
     endGameTxt.setOutlineColor(sf::Color::Magenta);
     endGameTxt.setOutlineThickness(2);
@@ -23,11 +24,27 @@ ScoreView::ScoreView(Snake snake): snake(snake)
     endGameTxt.setString("KONIEC GRY");
     endGameTxt.setCharacterSize(40);
 
+    score.setFont(font);
+    score.setCharacterSize(50);
+    score.setPosition(130,30);
+    score.setOutlineThickness(2);
+    score.setOutlineColor(sf::Color::Magenta);
+    score.setFillColor(sf::Color::Blue);
+    score.setString("Twoj wynik to : ");
+
+    scoreInt.setFont(font);
+    scoreInt.setCharacterSize(50);
+    scoreInt.setPosition(500,30);
+    scoreInt.setOutlineThickness(2);
+    scoreInt.setOutlineColor(sf::Color::Magenta);
+    scoreInt.setFillColor(sf::Color::Blue);
 
 }
 
 void ScoreView::draw(sf::RenderWindow &win) {
     win.draw(endGame);
     win.draw(endGameTxt);
+    win.draw(score);
+    win.draw(scoreInt);
 
 }

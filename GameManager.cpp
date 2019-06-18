@@ -20,7 +20,10 @@ void GameManager::updateState() {
         break;
     case 2://GAME:
         if (snakeController.isFinished())
+        {
+            scoreController.setScore();
             state = 3;//SCORE;
+        }
         break;
     case 3://SCORE:
         if(scoreController.isFinished())

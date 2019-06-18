@@ -33,7 +33,7 @@ void SnakeView::draw(sf::RenderWindow &win) {
     }
 
     for (int i = 0; i < snake.getLength() ; ++i) {
-        snake.setSnakeParameters(sf::Color::Red,snake.getSquareSize(),sf::Color::Black,1,i);
+        snake.setSnakeParameters(sf::Color::Red,snake.getSquareSize(),sf::Color::Black,2,i);
 
         for (int j = 0; j < snake.getLength(); ++j) {
             win.draw(snake.getSnakeSegment(j));
@@ -43,8 +43,6 @@ void SnakeView::draw(sf::RenderWindow &win) {
 
 
     }
-
-//    strumien<<snake.getCounter();
-//    score.setString(strumien.str());
-//    win.draw(score);
+    score.setString(std::to_string(snake.getCounter()));
+    win.draw(score);
 }

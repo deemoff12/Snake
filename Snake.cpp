@@ -62,10 +62,12 @@ void Snake::checkPos()
     if (snakeRS[0].getPosition().x<0 || snakeRS[0].getPosition().y<0 || snakeRS[0].getPosition().x>750 ||
             snakeRS[0].getPosition().y>600) {
         finished = true;
+        start = false;
     }
     for (int i = 1; i<snakeRS.size(); ++i) {
         if (snakeRS[0].getPosition()==snakeRS[i].getPosition()) {
             finished = true;
+            start = false;
         }
     }
 }

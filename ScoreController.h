@@ -19,6 +19,7 @@ class ScoreController {
 public:
     ScoreController(ScoreView & v, SnakeController & sc, IntroController & ic, Snake &snake, sf::RenderWindow & win);
     void handleEvent(sf::Event &event);
+    void setScore(){view.setString(snake.getCounter());}
 
     // no need to change this
     void draw (sf::RenderWindow & win) { view.draw(win); }
